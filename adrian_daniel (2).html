@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual de JavaScript</title>
+  <link rel="stylesheet" href="manual-javascript.css">
+
+</head>
+<body>
+
+  <header>
+    <h1>Manual de <span>JavaScript</span></h1>
+    <p>Resumen · SMR · 2024–2025</p>
+  </header>
+
+  <nav>
+    <a href="#variables">Variables</a>
+    <a href="#bucles">Bucles</a>
+    <a href="#funciones">Funciones</a>
+    <a href="#dom">HTML DOM</a>
+  </nav>
+
+  <main>
+
+ 
+    <section id="variables">
+      <p class="section-label">01 — Fundamentos</p>
+      <h2>Variables y Condicionales</h2>
+
+      <p>
+        Las variables son como cajas donde guardamos información. En JavaScript moderno
+        usamos <code style="font-family:monospace;color:var(--keyword)">let</code> para crear una variable.
+        Los condicionales nos permiten tomar decisiones según el valor de esas variables.
+      </p>
+
+      <table>
+        <tr>
+          <th>Palabra clave</th>
+          <th>Para qué sirve</th>
+        </tr>
+        <tr>
+          <td>let</td>
+          <td>Crea una variable</td>
+        </tr>
+        <tr>
+          <td>if (condición)</td>
+          <td>Ejecuta código solo si la condición es verdadera</td>
+        </tr>
+        <tr>
+          <td>{ }</td>
+          <td>Bloque de código que se ejecuta si se cumple la condición</td>
+        </tr>
+        <tr>
+          <td>if … else { }</td>
+          <td>Si no se cumple el if, se ejecuta lo que hay dentro del else</td>
+        </tr>
+        <tr>
+          <td>document.write()</td>
+          <td>Muestra el resultado en pantalla</td>
+        </tr>
+      </table>
+
+      <h3>Ejemplo básico</h3>
+      <div class="code-block"><pre>
+<span class="kw">let</span> edad = <span class="num">18</span>;
+
+<span class="kw">if</span> (edad >= <span class="num">18</span>) {
+  document.write(<span class="str">"Eres mayor de edad"</span>);
+} <span class="kw">else</span> {
+  document.write(<span class="str">"Eres menor de edad"</span>);
+}
+      </pre></div>
+
+      <h3>Operadores de comparación</h3>
+      <table>
+        <tr><th>Operador</th><th>Significado</th></tr>
+        <tr><td>i % 2 === 0</td><td>El número es PAR</td></tr>
+        <tr><td>i % 2 !== 0</td><td>El número es IMPAR</td></tr>
+        <tr><td>i &gt; 5</td><td>Mayor que 5</td></tr>
+        <tr><td>i &gt;= 5</td><td>Mayor o igual que 5</td></tr>
+        <tr><td>i === 5</td><td>Exactamente igual a 5</td></tr>
+        <tr><td>i !== 5</td><td>Diferente de 5</td></tr>
+        <tr><td>i &gt;= 3 &amp;&amp; i &lt;= 8</td><td>Entre 3 y 8 (los dos se deben cumplir)</td></tr>
+        <tr><td>i &lt; 3 || i &gt; 8</td><td>Menor que 3 O mayor que 8 (basta uno)</td></tr>
+      </table>
+    </section>
+
+
+    <section id="bucles">
+      <p class="section-label">02 — Repetición</p>
+      <h2>Bucles FOR</h2>
+
+      <p>
+        Un bucle <code style="font-family:monospace;color:var(--keyword)">for</code> repite un bloque de código
+        un número determinado de veces. Tiene tres partes: inicio, condición y modificación.
+      </p>
+
+      <table>
+        <tr><th>Parte</th><th>Código</th><th>Qué hace</th></tr>
+        <tr><td>inicio</td><td>let i = 0</td><td>Prepara el contador</td></tr>
+        <tr><td>condición</td><td>i &lt; 5</td><td>Mientras sea true, se repite</td></tr>
+        <tr><td>modificación</td><td>i++</td><td>Suma 1 al contador en cada vuelta</td></tr>
+      </table>
+
+      <h3>Estructura</h3>
+      <div class="code-block"><pre>
+<span class="kw">for</span> (inicio; condición; modificación) {
+  <span class="cmt">// código que se repite</span>
+}
+      </pre></div>
+
+      <h3>Ejemplo: mostrar números del 1 al 5</h3>
+      <div class="code-block"><pre>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">1</span>; i <= <span class="num">5</span>; i++) {
+  document.write(i + <span class="str">" "</span>);
+}
+<span class="cmt">// Resultado: 1 2 3 4 5</span>
+      </pre></div>
+
+      <h3>Ejemplo: mostrar solo los números pares</h3>
+      <div class="code-block"><pre>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i <= <span class="num">10</span>; i++) {
+  <span class="kw">if</span> (i % <span class="num">2</span> === <span class="num">0</span>) {
+    document.write(i + <span class="str">" "</span>);
+  }
+}
+<span class="cmt">// Resultado: 0 2 4 6 8 10</span>
+      </pre></div>
+
+      
+    </section>
+
+  
+    <section id="funciones">
+      <p class="section-label">03 — Organización</p>
+      <h2>Funciones</h2>
+
+      <p>
+        Una función es un bloque de código con nombre que podemos reutilizar cuantas veces
+        queramos. Primero se define y luego se llama (ejecuta).
+      </p>
+
+      <table>
+        <tr><th>Acción</th><th>Código</th></tr>
+        <tr><td>Definir</td><td>function nombre() { }</td></tr>
+        <tr><td>Con parámetro</td><td>function nombre(dato) { }</td></tr>
+        <tr><td>Llamar</td><td>nombre();</td></tr>
+        <tr><td>Llamar con parámetro</td><td>nombre(valor);</td></tr>
+      </table>
+
+      <h3>Función sin parámetros</h3>
+      <div class="code-block"><pre>
+<span class="kw">function</span> <span class="fn">saludar</span>() {
+  document.write(<span class="str">"Hola, bienvenido"</span>);
+}
+
+<span class="fn">saludar</span>(); <span class="cmt">// Llamamos a la función</span>
+      </pre></div>
+
+      <h3>Función con parámetro</h3>
+      <div class="code-block"><pre>
+<span class="kw">function</span> <span class="fn">saludar</span>(nombre) {
+  document.write(<span class="str">"Hola, "</span> + nombre);
+}
+
+<span class="fn">saludar</span>(<span class="str">"Ana"</span>);  <span class="cmt">// Hola, Ana</span>
+<span class="fn">saludar</span>(<span class="str">"Luis"</span>); <span class="cmt">// Hola, Luis</span>
+      </pre></div>
+
+      
+    </section>
+
+  
+    <section id="dom">
+      <p class="section-label">04 — Estructura HTML</p>
+      <h2>HTML y el DOM</h2>
+
+      <p>
+        El DOM (Document Object Model) es el árbol de elementos que forma una página web.
+        JavaScript puede acceder a cualquier elemento del árbol y modificarlo.
+      </p>
+
+      <h3>Estructura de un árbol DOM básico</h3>
+      <div class="tree">
+<span class="node-doc">DOCUMENT</span>
+  └── <span class="node-html">html</span>
+        ├── <span class="node-tag">head</span>
+        │     └── <span class="node-tag">title</span>  <span class="node-text">"Mi Página"</span>
+        └── <span class="node-tag">body</span>
+              ├── <span class="node-tag">h1</span>    <span class="node-text">"Bienvenidos"</span>
+              ├── <span class="node-tag">p</span>     <span class="node-text">"Este es un párrafo"</span>
+              └── <span class="node-tag">ul</span>
+                    ├── <span class="node-tag">li</span>  <span class="node-text">"Elemento 1"</span>
+                    └── <span class="node-tag">li</span>  <span class="node-text">"Elemento 2"</span>
+      </div>
+
+      <h3>Código HTML equivalente</h3>
+      <div class="code-block"><pre>
+<span class="kw">&lt;!DOCTYPE html&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+  <span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;title&gt;</span>Mi Página<span class="kw">&lt;/title&gt;</span>
+  <span class="kw">&lt;/head&gt;</span>
+  <span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>Bienvenidos<span class="kw">&lt;/h1&gt;</span>
+    <span class="kw">&lt;p&gt;</span>Este es un párrafo<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;ul&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Elemento 1<span class="kw">&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Elemento 2<span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span>
+  <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span>
+      </pre></div>
+
+      <h3>Seleccionar y modificar elementos</h3>
+      <p>Podemos seleccionar elementos por su <strong>ID</strong> (devuelve uno solo) o por su <strong>clase</strong> (devuelve varios).</p>
+
+      <table>
+        <tr><th>Selector</th><th>Método</th><th>Resultado</th></tr>
+        <tr><td>Por ID</td><td>document.getElementById("nombre")</td><td>1 elemento</td></tr>
+        <tr><td>Por Clase</td><td>document.getElementsByClassName("nombre")</td><td>Colección de elementos</td></tr>
+      </table>
+
+      <h3>Propiedades más usadas</h3>
+      <table>
+        <tr><th>Propiedad</th><th>Qué modifica</th><th>Ejemplo</th></tr>
+        <tr><td>.innerText</td><td>Texto del elemento</td><td>elemento.innerText = "Hola"</td></tr>
+        <tr><td>.style.color</td><td>Color del texto</td><td>elemento.style.color = "red"</td></tr>
+        <tr><td>.style.backgroundColor</td><td>Color de fondo</td><td>elemento.style.backgroundColor = "blue"</td></tr>
+        <tr><td>.src</td><td>Imagen (solo &lt;img&gt;)</td><td>img.src = "foto.jpg"</td></tr>
+        <tr><td>.style.border</td><td>Borde del elemento</td><td>elemento.style.border = "1px solid black"</td></tr>
+        <tr><td>.style.display</td><td>Visibilidad</td><td>elemento.style.display = "none"</td></tr>
+      </table>
+
+      <h3>Ejemplo completo</h3>
+      <div class="code-block"><pre>
+<span class="cmt">// Por ID — modifica un único elemento</span>
+<span class="kw">let</span> titulo = document.<span class="fn">getElementById</span>(<span class="str">"tituloPrincipal"</span>);
+titulo.innerText = <span class="str">"Página Modificada"</span>;
+titulo.style.color = <span class="str">"blue"</span>;
+
+<span class="cmt">// Por Clase — modifica varios elementos</span>
+<span class="kw">let</span> parrafos = document.<span class="fn">getElementsByClassName</span>(<span class="str">"texto"</span>);
+parrafos[<span class="num">0</span>].innerText = <span class="str">"Primer párrafo"</span>;
+parrafos[<span class="num">1</span>].innerText = <span class="str">"Segundo párrafo"</span>;
+      </pre></div>
+
+     
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Manual de JavaScript · SMR</span>
+    <span>Variables · Bucles · Funciones · DOM</span>
+  </footer>
+
+</body>
+</html>
