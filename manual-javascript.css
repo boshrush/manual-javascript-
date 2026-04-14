@@ -52,7 +52,7 @@ header p {
   font-family: 'IBM Plex Mono', monospace;
 }
 
-/* ─── MAIN ─── */
+
 
 main {
   max-width: 860px;
@@ -60,7 +60,7 @@ main {
   padding: 4rem 2rem;
 }
 
-/* ─── SECCIONES ─── */
+
 
 section {
   margin-bottom: 5rem;
@@ -134,7 +134,7 @@ td:first-child {
   white-space: nowrap;
 }
 
-/* ─── BLOQUES DE CÓDIGO ─── */
+
 
 .code-block {
   background: var(--code-bg);
@@ -157,38 +157,9 @@ td:first-child {
 .fn  { color: #7a3fbf; }
 .num { color: #3a6ea5; }
 
-/* ─── ÁRBOL DOM ─── */
-
-.tree {
-  background: var(--code-bg);
-  padding: 1.5rem;
-  border-radius: 4px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.82rem;
-  line-height: 1.9;
-  margin: 1.5rem 0;
-}
-
-.tree .node-doc  { color: var(--muted); }
-.tree .node-html { color: var(--keyword); font-weight: 600; }
-.tree .node-tag  { color: var(--accent2); }
-.tree .node-text { color: #666; }
-
-/* ─── ENLACES ─── */
 
 a {
   color: var(--accent);
   margin-bottom: 1rem;
 }
 
-/* ─── FOOTER ─── */
-
-footer {
-  border-top: 2px solid var(--text);
-  padding: 2rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--muted);
-}
